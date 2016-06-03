@@ -12,7 +12,18 @@ The class provide a default object but nothing stop the user to gave many Daemon
 
 ## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+Example 1
+
+```swift
+    let daemonBlock = {(schedule:()->Void)->Void in
+        print("Hi now is: \(NSDate())")
+        schedule() }
+
+    Daemon.sharedInstance.submmitBlock("Damon",
+        block: daemonBlock,
+        active: true,
+        seconds: 2)
+```
 
 ## Motivation
 
